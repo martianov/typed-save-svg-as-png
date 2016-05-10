@@ -1,37 +1,34 @@
 // Type definitions for saveSvgAsPng v1.0.3
 // Project: https://github.com/exupero/saveSvgAsPng
 
-declare namespace saveSvgAsPng {
-    export type SourceElement = HTMLElement | SVGElement;
 
-    export type BackgroundStyle = string | CanvasGradient | CanvasPattern;
+export type SourceElement = HTMLElement | SVGElement;
 
-    export interface SelectorRemap {
-        (text: string): string;
-    }
+export type BackgroundStyle = string | CanvasGradient | CanvasPattern;
 
-    export interface SaveSVGOptions {
-        scale?: number;
-        responsive?: boolean;
-        width?: number;
-        height?: number;
-        left?: number;
-        top?: number;
-        selectorRemap?: SelectorRemap;
-        backgroundColor?: BackgroundStyle;
-    }
-
-    export interface UriCallback {
-        (uri: string): void;
-    }
-
-    export function svgAsDataUri(el: SourceElement, options: SaveSVGOptions, cb: UriCallback): void;
-
-    export function svgAsPngUri(el: SourceElement, options: SaveSVGOptions, cb: UriCallback): void;
-
-    export function saveSvg(el: SourceElement, fileName: string, options?: SaveSVGOptions): void;
-
-    export function saveSvgAsPng(el: SourceElement, fileName: string, options?: SaveSVGOptions): void;
+export interface SelectorRemap {
+  (text: string): string;
 }
 
-export = saveSvgAsPng;
+export interface SaveSVGOptions {
+  scale?: number;
+  responsive?: boolean;
+  width?: number;
+  height?: number;
+  left?: number;
+  top?: number;
+  selectorRemap?: SelectorRemap;
+  backgroundColor?: BackgroundStyle;
+}
+
+export interface UriCallback {
+  (uri: string): void;
+}
+
+export function svgAsDataUri(el: SourceElement, options: SaveSVGOptions, cb: UriCallback): void;
+
+export function svgAsPngUri(el: SourceElement, options: SaveSVGOptions, cb: UriCallback): void;
+
+export function saveSvg(el: SourceElement, fileName: string, options?: SaveSVGOptions): void;
+
+export function saveSvgAsPng(el: SourceElement, fileName: string, options?: SaveSVGOptions): void;
